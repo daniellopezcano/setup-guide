@@ -97,31 +97,7 @@ For a manual see: [[screen]]
 ---
 
 ## 6. Advanced Configuration for Linux
-
-### **6.1 Enable TRIM for SSD**
-
-#### **What is TRIM?**
-TRIM allows the operating system to inform the SSD which blocks are no longer in use, optimizing performance and extending its lifespan.
-#### **Steps for installation and configuration:**
-1. **Run TRIM manually:**
-    - For the root partition (`/`):
-     ```bash
-     sudo fstrim -v /
-     ```
-   - For other partitions (like `/home`):
-     ```bash
-     sudo fstrim -v /home
-     ```
-2. Enable automatic TRIM:
-   ```bash
-   sudo systemctl enable fstrim.timer
-   sudo systemctl start fstrim.timer
-   ```
-   - Verify the timer is active:
-     ```bash
-     systemctl status fstrim.timer
-     ```
-### **6.2 Install and configure lm-sensors**
+### **6.1 Install and configure lm-sensors**
 
 #### **What is lm-sensors?**
 `lm-sensors` is a tool to monitor temperatures, voltages, and fan speeds of your hardware.

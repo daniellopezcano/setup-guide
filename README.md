@@ -9,15 +9,39 @@ The guides are written in Markdown and are best viewed using [Obsidian](https://
 ## **Contents**
 Below is an overview of the main topics covered in the guide, found in **`0. installation setup & coding guides`**:
 
-1. **Installing Linux (Debian) from Scratch** 
-2. **Advanced Terminal Tools & Utilities**  
-3. **Creating and Configuring Initialization Files**  
-4. **Python Environment Setup**  
-5. **Automated System Monitoring and Notifications**  
-6. **SSH Keygen Setup**  
-7. **VS Code Installation and Remote Setup**
-8. **Folder Synchronization with Google Drive**  
-9. **Useful Programs and Commands**
+# Installing from scratch a linux (debian) distribution
+[[debian scratch installation]]
+# Advanced Terminal Tools & utils
+[[Install Advaced Terminal Tools (Oh My Zsh, htop, TRIM, htop, lm-sensors)]]
+# Create and Configure Initialization Files
+Read before creating the files down below (`.bashrc`, `.profile`, `.zshrc`) [[Handling Login and Non-Login Shells]]:
+- [[bashrc]]
+- [[profile]]
+- [[zshrc]]
+# Download and Install Miniconda
+[[miniconda installation]]
+# Setup Python Virtual Environments
+[[Setup Python Virtual Environments]]
+# Automated System Monitoring and Notifications
+Configure your mail account to be able to send mails from python: [[How to Send Emails from Python]]
+Go to the following github repository and follow the README instructions [monitor_pc](https://github.com/daniellopezcano/monitor_pc)
+# Setup keygen to connect to a remote machine (local setup)
+[[SSH Keygen]]
+# VS Code Installation and remote setup (from your local setup)
+[[VS code installation and remote setup]]
+##### (alternative to using VS for jupyer) -- launch jupyter (from a remote server) in your local browser:
+If you don’t want to use VS Code as your primary tool for working with Jupyter notebooks on a remote server, configuring Jupyter for browser-based access is a flexible alternative.  This setup guide provides systematic instructions to launch and access Jupyter notebooks securely and efficiently through a web browser: [[remote_jupyter_from_browser]]
+# Folder synchronization between Google Drive and Linux using rclone
+[[Sync Google Drive & Linux with rclone]]
+# Useful programs to install
+[[install_programs]]
+# shortcuts, commands & cheat-sheets
+[[Useful system Shortcuts]]
+[[Useful_terminal_commads]]
+[[VSC_shortcuts]]
+[[matplotlib]] 
+[[markdown cheat-sheet]]
+[[py_cheatsheet.py]]
 
 ---
 ## **Contact**
