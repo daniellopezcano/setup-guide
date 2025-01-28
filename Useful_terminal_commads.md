@@ -1,21 +1,16 @@
-
 ## Terminal Shortcuts (General)
 
-| **Shortcut/Command**         | **Description**                                         |
-|------------------------------|-------------------------------------------------------|
-| `Ctrl+C`                     | Interrupt the current command.                        |
-| `Ctrl+Z`                     | Suspend the current process.                          |
-| `jobs`                       | List all background jobs.                             |
-| `fg %n`                      | Resume job `n` in the foreground.                     |
-| `bg %n`                      | Resume job `n` in the background.                     |
-| `Ctrl+D`                     | Exit the current shell session.                       |
-| `Ctrl+L`                     | Clear the terminal screen.                            |
-| `Ctrl+Shift+V`               | Paste text into the terminal.                         |
-| `Ctrl+Shift+C`               | Copy selected text from the terminal.                 |
-| `Alt+.`                      | Use the last argument of the previous command.        |
-| `Ctrl+Shift+N`               | Open a new terminal window.                           |
-| `Ctrl+Shift+T`               | Open a new terminal tab.                              |
-
+| **Shortcut/Command** | **Description**                       |
+| -------------------- | ------------------------------------- |
+| `Ctrl+C`             | Interrupt the current command.        |
+| `Ctrl+Z`             | Suspend the current process.          |
+| `Ctrl+D`             | Exit the current shell session.       |
+| `Ctrl+L`             | Clear the terminal screen.            |
+| `Ctrl+Shift+V`       | Paste text into the terminal.         |
+| `Ctrl+Shift+C`       | Copy selected text from the terminal. |
+| `Ctrl+Shift+N`       | Open a new terminal window.           |
+| `Ctrl+Shift+T`       | Open a new terminal tab.              |
+| `Ctrl+R`             | Search through command history.       |
 ## File and Directory Management in Terminal
 
 | **Shortcut/Command**           | **Description**                                      |
@@ -32,39 +27,27 @@
 | `find /path -name "filename"`  | Search for a file or directory in a specific path.  |
 ## Process and System Management
 
-| **Shortcut/Command**          | **Description**                                      |
-|-------------------------------|----------------------------------------------------|
-| `top`                         | Monitor processes in real-time (similar to `htop`). |
-| `ps aux`                      | List all active processes.                         |
-| `kill PID`                    | Terminate a process by its PID.                   |
-| `pkill process_name`          | Terminate a process by its name.                  |
-| `uptime`                      | Show how long the system has been running.        |
-| `df -h`                       | Display disk usage in a human-readable format.    |
-| `du -sh folder_name`          | Show the size of a directory.                     |
-| `free -h`                     | Show available and used RAM.                      |
-| `uname -a`                    | Display system information.                       |
+| **Shortcut/Command**  | **Description**                                     |
+| --------------------- | --------------------------------------------------- |
+| `top`                 | Monitor processes in real-time (similar to `htop`). |
+| `ps aux`              | List all active processes.                          |
+| `kill PID`            | Terminate a process by its PID.                     |
+| `pkill process_name`  | Terminate a process by its name.                    |
+| `uptime`              | Show how long the system has been running.          |
+| `df -h`               | Display disk usage in a human-readable format.      |
+| `du -bhs folder_name` | Show the size of a directory.                       |
+| `free -h`             | Show available and used RAM.                        |
+| `uname -a`            | Display system information.                         |
 ## Package Management (apt)
 
-| **Shortcut/Command**                  | **Description**                                     |
-|---------------------------------------|---------------------------------------------------|
-| `sudo apt update`                     | Update the package index.                        |
-| `sudo apt upgrade -y`                 | Upgrade all installed packages.                 |
-| `sudo apt install package_name`       | Install a package.                              |
-| `sudo apt remove package_name`        | Uninstall a package.                            |
-| `sudo apt autoremove`                 | Automatically remove unnecessary packages.      |
-| `sudo apt search package_name`        | Search for a package in the repositories.       |
-## Terminal Shortcuts
-
-| **Shortcut**                  | **Description**                                      |
-|-------------------------------|----------------------------------------------------|
-| `Ctrl+C`                      | Stop a running command.                           |
-| `Ctrl+Z`                      | Suspend a running command (resume with `fg`).     |
-| `Ctrl+D`                      | Close the current terminal.                      |
-| `Ctrl+L`                      | Clear the terminal screen.                       |
-| `Ctrl+R`                      | Search through command history.                  |
-| `!!`                          | Repeat the last executed command.                |
-| `!n`                          | Execute command number `n` from history.         |
-| `!string`                     | Execute the last command that starts with `string`. |
+| **Shortcut/Command**            | **Description**                            |
+| ------------------------------- | ------------------------------------------ |
+| `sudo apt update`               | Update the package index.                  |
+| `sudo apt upgrade -y`           | Upgrade all installed packages.            |
+| `sudo apt install package_name` | Install a package.                         |
+| `sudo apt remove package_name`  | Uninstall a package.                       |
+| `sudo apt autoremove`           | Automatically remove unnecessary packages. |
+| `sudo apt search package_name`  | Search for a package in the repositories.  |
 ## Networking and Connection Commands
 
 | **Shortcut/Command**                  | **Description**                                     |
@@ -75,79 +58,51 @@
 | `curl http://example.com`             | Download content or make HTTP requests.          |
 | `wget http://example.com/file`        | Download files from the web.                     |
 | `ssh user@hostname`                   | Connect to a remote server via SSH.              |
-## Nano Text Editor Shortcuts
-
-| **Shortcut** | **Description**              |
-| ------------ | ---------------------------- |
-| `Ctrl+O`     | Save the file.               |
-| `Ctrl+X`     | Exit the editor.             |
-| `Ctrl+K`     | Cut the current line.        |
-| `Ctrl+U`     | Paste a previously cut line. |
-| `Ctrl+W`     | Search for text in the file. |
 ## Zsh and Oh My Zsh
 
-| **Shortcut/Command**         | **Description**                                         |
-|------------------------------|-------------------------------------------------------|
-| `Tab`                        | Advanced autocompletion.                              |
-| `Ctrl+R`                     | Search command history interactively.                 |
-| `Ctrl+U`                     | Clear the line from the cursor to the start.          |
-| `Ctrl+K`                     | Clear from the cursor to the end of the line.         |
-| `Ctrl+A`                     | Move the cursor to the beginning of the line.         |
-| `Ctrl+E`                     | Move the cursor to the end of the line.               |
-| `Ctrl+W`                     | Delete the word to the left of the cursor.            |
-| `Ctrl+T`                     | Swap the last two characters before the cursor.       |
-| `Ctrl+Y`                     | Paste the last deleted text.                          |
-| `!!`                         | Repeat the last executed command.                    |
-| `!n`                         | Run the nth command from history.                    |
-| `!$`                         | Use the last argument of the previous command.        |
-| `source ~/.zshrc`            | Reload Zsh configuration.                            |
-| `setopt auto_pushd`          | Enable automatic pushd (directory stack).            |
-| `d`                          | Show the directory stack.                            |
-| `pushd dir`                  | Push a directory onto the stack and switch to it.    |
-| `popd`                       | Pop the top directory off the stack.                 |
-
-## Oh My Zsh Plugins and Commands
-
-| **Plugin/Command**           | **Description**                                         |
-|------------------------------|-------------------------------------------------------|
-| `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)` | Example of useful plugins in `~/.zshrc`.           |
-| `zsh-autosuggestions`        | Suggests commands based on history.                   |
-| `zsh-syntax-highlighting`    | Highlights syntax errors in commands.                 |
-| `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions` | Install `zsh-autosuggestions`. |
-| `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting` | Install `zsh-syntax-highlighting`. |
-| `alias ll='ls -alF'`         | Example alias to list files in detail.                |
-| `alias ..='cd ..'`           | Quick navigation up one directory.                    |
-| `unalias <alias_name>`       | Remove an existing alias.                             |
+| **Shortcut/Command** | **Description**                                   |
+| -------------------- | ------------------------------------------------- |
+| `Tab`                | Advanced autocompletion.                          |
+| `Ctrl+U`             | Clear the line from the cursor to the start.      |
+| `Ctrl+K`             | Clear from the cursor to the end of the line.     |
+| `Ctrl+A`             | Move the cursor to the beginning of the line.     |
+| `Ctrl+E`             | Move the cursor to the end of the line.           |
+| `Ctrl+W`             | Delete the word to the left of the cursor.        |
+| `Ctrl+T`             | Swap the last two characters before the cursor.   |
+| `Ctrl+Y`             | Paste the last deleted text.                      |
+| `source ~/.zshrc`    | Reload Zsh configuration.                         |
+| `setopt auto_pushd`  | Enable automatic pushd (directory stack).         |
+| `d`                  | Show the directory stack.                         |
+| `pushd dir`          | Push a directory onto the stack and switch to it. |
+| `popd`               | Pop the top directory off the stack.              |
 ##  Fzf (Fuzzy Finder)
 
-| **Shortcut/Command**       | **Description**                                        |
-|----------------------------|--------------------------------------------------------|
-| `Ctrl+R`                   | Search command history interactively using `fzf`.     |
-| `fzf`                      | Start an interactive search in the current directory. |
-| `find . | fzf`             | Search files in the current directory with `fzf`.     |
-| `grep "pattern" | fzf`     | Filter `grep` results interactively with `fzf`.        |
-| `Alt+C`                    | Quickly navigate between directories.                 |
-| `Ctrl+T`                   | Search for files and insert their paths into the command line. |
-| `fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'` | Preview file content while searching. |
+| **Shortcut/Command**                                                      | **Description**                                                |                                                   |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------- |
+| `fzf`                                                                     | Start an interactive search in the current directory.          |                                                   |
+| `find .                                                                   | fzf`                                                           | Search files in the current directory with `fzf`. |
+| `grep "pattern"                                                           | fzf`                                                           | Filter `grep` results interactively with `fzf`.   |
+| `Alt+C`                                                                   | Quickly navigate between directories.                          |                                                   |
+| `Ctrl+T`                                                                  | Search for files and insert their paths into the command line. |                                                   |
+| `fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'` | Preview file content while searching.                          |                                                   |
 ## Screen
 
-| **Shortcut/Command**       | **Description**                                               |
-|----------------------------|-------------------------------------------------------------|
-| `screen -S session_name`   | Start a new `screen` session with a custom name.            |
-| `Ctrl+a d`                 | Detach from the current session, leaving it in the background. |
-| `screen -ls`               | List all active `screen` sessions.                          |
-| `screen -r session_name`   | Reattach to a specific detached session by name.            |
-| `screen -r`                | Reattach to the only running session (if only one exists).  |
-| `Ctrl+a c`                 | Create a new window within the session.                     |
-| `Ctrl+a n` / `Ctrl+a p`    | Switch to the next/previous window.                         |
-| `Ctrl+a w`                 | List all windows in the current session.                   |
-| `Ctrl+a S`                 | Split the screen horizontally into multiple regions.        |
-| `Ctrl+a |`                 | Split the screen vertically.                                |
-| `Ctrl+a Tab`               | Switch between split regions.                               |
-| `Ctrl+a X`                 | Close the active region.                                    |
-| `Ctrl+a H`                 | Start logging the session output to `screenlog.0`.         |
-| `Ctrl+a :multiuser on`     | Enable multiuser mode to share the session.                |
-| `Ctrl+a :acladd username`  | Grant another user access to the session (on the same system). |
+| **Shortcut/Command**      | **Description**                                                |                              |
+| ------------------------- | -------------------------------------------------------------- | ---------------------------- |
+| `screen -S session_name`  | Start a new `screen` session with a custom name.               |                              |
+| `Ctrl+a+d`                | Detach from the current session, leaving it in the background. |                              |
+| `screen -ls`              | List all active `screen` sessions.                             |                              |
+| `screen -r session_name`  | Reattach to a specific detached session by name.               |                              |
+| `Ctrl+a+c`                | Create a new window within the session.                        |                              |
+| `Ctrl+a n` / `Ctrl+a p`   | Switch to the next/previous window.                            |                              |
+| `Ctrl+a w`                | List all windows in the current session.                       |                              |
+| `Ctrl+a S`                | Split the screen horizontally into multiple regions.           |                              |
+| `Ctrl+a                   | `                                                              | Split the screen vertically. |
+| `Ctrl+a Tab`              | Switch between split regions.                                  |                              |
+| `Ctrl+a X`                | Close the active region.                                       |                              |
+| `Ctrl+a H`                | Start logging the session output to `screenlog.0`.             |                              |
+| `Ctrl+a :multiuser on`    | Enable multiuser mode to share the session.                    |                              |
+| `Ctrl+a :acladd username` | Grant another user access to the session (on the same system). |                              |
 ## htop
 
 | **Shortcut/Command**         | **Description**                                              |

@@ -1,178 +1,128 @@
-
-This guide assumes no preinstalled operating system on your machine and provides steps for preparing the USB drive and installing Debian on a bare-metal system.
-
----
-## 1. **Preparation**
-### 1.1 **Download the Debian ISO**
+# 1. **Preparation**
 1. On a working system, visit the [Debian Official Website](https://www.debian.org/download).
 2. Select the **Stable** release for reliability. Opt for:
    - **Netinst ISO**: Minimal installation (downloads required packages during setup).
    - **DVD ISO**: For offline installation (contains more prepackaged software).
-
-**Why Stable?**
-- Provides maximum reliability and long-term support, ideal for production or personal systems.
-
----
-
-### 1.2 **Create a Bootable USB**
-#### 1.2.1 **From a Linux/Mac System (Preferred)**
-1. Insert a USB drive (minimum 4GB for netinst, 8GB for DVD ISO).
-2. Identify the USB device:
+3. Insert a USB drive (minimum 4GB for netinst, 8GB for DVD ISO).
+4. Identify the USB device:
    ```bash
    lsblk
    ```
    - Note the device name (e.g., `/dev/sdb`).
-3. Use `dd` to create the bootable USB:
-   ```bash
-   sudo dd if=/path/to/debian.iso of=/dev/sdX bs=4M status=progress
-   sync
-   ```
-   Replace `/dev/sdX` with your USB device name (e.g., `/dev/sdb`).
-
-**Caution**: Double-check the device name to avoid overwriting important disks.
-
+5. download balena etcher to mount the iso on the usb https://etcher.balena.io/ Follow the instructions to create the bootable with the linux iso
 ---
-
-#### 1.2.2 **From Another Debian System**
-If available, use `cp` or tools like `gnome-disk-utility`:
-- **Copy with `cp`**:
-   ```bash
-   sudo cp /path/to/debian.iso /dev/sdX && sync
-   ```
-- **Graphical Tool**:
-   - Open **Disks** (`gnome-disk-utility`), select the USB, and restore the ISO.
-
----
-
-#### 1.2.3 **Alternative Method (Ventoy)**
-If you have access to a system for USB preparation:
-1. Download [Ventoy](https://www.ventoy.net/).
-2. Install Ventoy on the USB:
-   ```bash
-   sudo bash Ventoy2Disk.sh -i /dev/sdX
-   ```
-3. Copy the Debian ISO to the USB. Ventoy allows multiboot setups.
-
----
-
-## 2. **Prepare the New Machine**
-### 2.1 **Assemble the Hardware**
-- Double-check all connections, especially:
-  - CPU, RAM, and storage devices.
-  - Power supply connections.
-
-### 2.2 **Boot from USB**
+# 2. **Prepare the New Machine**
 1. Insert the bootable USB.
 2. Power on the machine and access BIOS/UEFI (common keys: `Del`, `F2`, `F12`, `Esc`).
 3. **Set Boot Priority**:
    - Enable UEFI (recommended).
    - Set the USB as the primary boot device.
 4. **Disable Secure Boot** if needed (for unsigned drivers or firmware).
-
 ---
-
-## 3. **Install Debian**
-### 3.1 **Boot into the Installer**
-1. Restart the machine with the USB inserted.
-2. The system should boot into the Debian installer. If it doesn’t:
-   - Recheck BIOS settings.
-   - Confirm the USB was prepared correctly.
-
----
-
-### 3.2 **Follow the Installer Steps**
+# 3. Install Debian
+## 3.1 Boot into the Installer
+Restart the machine with the USB inserted. The system should boot into the Debian installer. If it doesn’t:
+- Recheck BIOS settings.
+- Confirm the USB was prepared correctly.
+## 3.2 Follow the Installer Steps
 #### Key Steps:
-1. **Language**: Choose a language for the installer.
-2. **Keyboard Layout**: Match your physical keyboard layout.
-3. **Network Configuration**:
-   - Wired connections are auto-detected.
-   - For Wi-Fi, ensure the firmware is loaded, or prepare it beforehand.
-
----
-
-### 3.3 **Partition Disks**
-1. Choose **Guided - Use Entire Disk** for simplicity or **Manual** for advanced setups.
-2. Suggested Layout:
-   - `/` (Root): 20-50GB.
-   - `swap`: Match your RAM if ≤16GB; otherwise, 2-4GB.
-   - `/home`: Remaining space.
-
----
-
-### 3.4 **Install Base System**
-- Select a Debian mirror close to your location for faster downloads.
-
----
-
-### 3.5 **Set Up User Accounts**
+- **Language**: Choose a language for the installer.
+- **Keyboard Layout**: Match your physical keyboard layout.
+- **Network Configuration**:
+  - Wired connections are auto-detected.
+  - For Wi-Fi, ensure the firmware is loaded, or prepare it beforehand by downloading the appropriate firmware packages (e.g., `firmware-iwlwifi`) and placing them on a USB drive.
+## 3.3 Partition Disks
+Choose **Guided - Use Entire Disk** for simplicity or **Manual** for advanced setups.
+#### Suggested Layout:
+- `/` (Root): 20-50GB.
+- `swap`: Match your RAM if ≤16GB; otherwise, 2-4GB.
+- `/home`: Remaining space for user data.
+## 3.4 Set Up User Accounts
 - **Root Password**: Optional (recommended to create an admin user instead).
-- **Admin User**:
-   - Username and password for daily use.
-
+- **Admin User**: Create a username and password for daily use (e.g., `dlopez`).
 ---
-
-### 3.6 **Install GRUB Bootloader**
-- Install GRUB on the primary drive (e.g., `/dev/sda`) to ensure bootability.
-
----
-
-## 4. **Post-Installation Setup**
-### 4.1 **Remove USB**
-- Avoid re-entering the installer on reboot.
-
-### 4.2 **Reboot and Update**
-- Log in and run:
+# 4. Post-Installation Setup
+## 4.1 Remove USB
+Avoid re-entering the installer on reboot by removing the installation USB drive.
+## 4.2 Reboot and Update
+Log in and run:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-
+## 4.3 Resolve User Permissions Issue
+If the admin user cannot run `sudo` commands, ensure the user is added to the `sudo` group:
+1. Switch to the root account:
+   ```bash
+   su -
+   ```
+2. Add the user to the `sudo` group:
+   ```bash
+   usermod -aG sudo user
+   ```
+3. Log out and back in, or reboot for changes to take effect.
 ---
-
-### 4.3 **Install Essential Tools**
+# 5. Install and Configure Essential Tools
+## 5.1 Install Essential Tools
+Install commonly used tools and utilities, including a C compiler for building software from source and `curl` for downloading scripts:
 ```bash
 sudo apt install build-essential curl wget git vim -y
 ```
-
----
-
-### 4.4 **Install Drivers**
-- NVIDIA GPUs:
+## 5.2 Install Drivers
+For hardware requiring proprietary drivers:
+- **NVIDIA GPUs**:
+  ```bash
+  sudo apt install nvidia-driver
+  ```
+- **AMD GPUs**:
+  ```bash
+  sudo apt install firmware-amd-graphics
+  ```
+- **Wi-Fi or Ethernet Firmware**:
+  ```bash
+  sudo apt install firmware-iwlwifi firmware-linux-free
+  ```
+## 5.3 Install Desktop Environment
+If not installed during setup, you can add a desktop environment:
 ```bash
-sudo apt install nvidia-driver
+sudo apt install task-gnome-desktop
 ```
-- AMD GPUs:
+## 5.4 Install GNOME Tweaks and Dash-to-Panel
+1. Install GNOME Tweaks for customizing your desktop:
+   ```bash
+   sudo apt install gnome-tweaks
+   ```
+2. Install `Dash-to-Panel` for a more accessible taskbar:
+   ```bash
+   sudo apt install gnome-shell-extension-dash-to-panel
+   ```
+3. Enable and configure the extension:
+   ```bash
+   gnome-extensions enable dash-to-panel@jderose9.github.com
+   gnome-extensions prefs dash-to-panel
+   ```
+   - Disable intelligent auto-hide to keep the taskbar always visible.
+## 5.5 Add Flatpak for Modern Applications
+Flatpak provides access to a wide range of modern applications:
 ```bash
-sudo apt install firmware-amd-graphics
+sudo apt install flatpak gnome-software-plugin-flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
-- For missing Wi-Fi or Ethernet firmware:
-```bash
-sudo apt install firmware-iwlwifi firmware-linux-free
-```
-
----
-
-## 5. **Optional Configurations**
-### Enable TRIM for SSD:
-```bash
-sudo systemctl enable fstrim.timer
-sudo systemctl start fstrim.timer
-```
-
-### Install Desktop Environment:
-- Minimal installs may require:
-```bash
-sudo apt install gnome-desktop-environment
-```
-
----
-
-## 6. **Verification**
-- Verify disk and system info:
-```bash
-df -h
-uname -a
-```
-
----
-
-This guide ensures Debian installation from scratch on a machine with no preinstalled OS. Let me know if further clarifications are needed!
+## 5.6 Pin Applications to the Taskbar
+To pin Google Chrome to the taskbar:
+1. Create a `.desktop` file for Chrome:
+   ```bash
+   nano ~/.local/share/applications/google-chrome.desktop
+   ```
+   Add the following content:
+   ```
+   [Desktop Entry]
+   Version=1.0
+   Name=Google Chrome
+   Exec=/home/dlopez/chrome/opt/google/chrome/google-chrome %U
+   Terminal=false
+   Icon=/home/dlopez/chrome/opt/google/chrome/product_logo_256.png
+   Type=Application
+   Categories=Network;WebBrowser;
+   StartupNotify=true
+   ```
+Save the file and add Chrome to favorites via GNOME Tweaks or by right-clicking its icon.

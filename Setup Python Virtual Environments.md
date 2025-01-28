@@ -1,4 +1,3 @@
-
 This guide explains how to set up a Conda environment named `VE`, including optional installations for PyTorch and BACCO. Each step includes explanations of the purpose of the packages.
 
 ---
@@ -44,11 +43,11 @@ python -m ipykernel install --user --name=VE --display-name "Python (VE)"```
 - **iminuit**: A library for minimization problems, often used in statistical modeling.
 - **ipdb**: An interactive debugger for Python scripts.
 
-|**Package**|**Purpose**|**Interface**|**Notes**|
-|---|---|---|---|
-|`notebook`|Provides the server and the classic Jupyter Notebook interface.|Classic (browser-based).|Lightweight, a good option if you only need simple notebooks.|
-|`jupyterlab`|Provides a modern and advanced interface with additional features.|Modern (browser-based).|Ideal for complex projects, a replacement for the classic Jupyter Notebook.|
-|`ipykernel`|Allows Python to be used as a kernel to execute code in notebooks.|N/A (it's a backend).|Necessary if using Python with Jupyter; enables registering virtual environments as kernels.|
+| **Package**  | **Purpose**                                                        | **Interface**            | **Notes**                                                                                    |
+| ------------ | ------------------------------------------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------- |
+| `notebook`   | Provides the server and the classic Jupyter Notebook interface.    | Classic (browser-based). | Lightweight, a good option if you only need simple notebooks.                                |
+| `jupyterlab` | Provides a modern and advanced interface with additional features. | Modern (browser-based).  | Ideal for complex projects, a replacement for the classic Jupyter Notebook.                  |
+| `ipykernel`  | Allows Python to be used as a kernel to execute code in notebooks. | N/A (it's a backend).    | Necessary if using Python with Jupyter; enables registering virtual environments as kernels. |
 
 ---
 ## Step 3: Install Optional Packages
