@@ -12,7 +12,7 @@ ssh-keygen -t ed25519 -C "daniellopezcano13@gmail.com"
 ```
 - When prompted, specify a new filename to avoid overwriting:
   ```plaintext
-  Enter file in which to save the key (/home/youruser/.ssh/id_ed25519): /home/youruser/.ssh/id_ed25519_id_ed25519_atlas248
+  Enter file in which to save the key (/home/youruser/.ssh/id_ed25519): /home/youruser/.ssh/id_ed25519_atlas248
   ```
 - Optionally, add a passphrase for extra security.
 e- **Parameters**:
