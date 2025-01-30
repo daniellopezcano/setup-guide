@@ -1,7 +1,6 @@
 # 1. **Preparation**
 1. On a working system, visit the [Debian Official Website](https://www.debian.org/download).
 2. Select the **Stable** release for reliability. Opt for:
-   - **Netinst ISO**: Minimal installation (downloads required packages during setup).
    - **DVD ISO**: For offline installation (contains more prepackaged software).
 3. Insert a USB drive (minimum 4GB for netinst, 8GB for DVD ISO).
 4. Identify the USB device:
@@ -65,7 +64,7 @@ If the admin user cannot run `sudo` commands, ensure the user is added to the `s
 ## 5.1 Install Essential Tools
 Install commonly used tools and utilities, including a C compiler for building software from source and `curl` for downloading scripts:
 ```bash
-sudo apt install build-essential curl wget git vim -y
+sudo apt install build-essential libncurses-dev curl wget git vim -y
 ```
 ## 5.2 Install Drivers
 For hardware requiring proprietary drivers:
