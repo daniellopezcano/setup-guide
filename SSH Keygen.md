@@ -44,7 +44,19 @@ Host atlas-248.sw.ehu.es
     PreferredAuthentications publickey
     KexAlgorithms +diffie-hellman-group14-sha1
     LogLevel DEBUG
+	ServerAliveInterval 60
+	ServerAliveCountMax 10
 ```
+- **`Host atlas-248.sw.ehu.es`** → Defines a shortcut name for the SSH connection.
+- **`HostName atlas-248.sw.ehu.es`** → Specifies the actual remote server address.
+- **`User dlopez`** → Defines the username for the SSH session.
+- **`IdentityFile ~/.ssh/id_ed25519_atlas248`** → Specifies the private key file for authentication.
+- **`PubkeyAuthentication yes`** → Enables authentication using a public key.
+- **`PreferredAuthentications publickey`** → Sets public key authentication as the preferred method.
+- **`KexAlgorithms +diffie-hellman-group14-sha1`** → Adds an older key exchange algorithm for compatibility.
+- **`LogLevel DEBUG`** → Enables detailed logging for debugging connection issues.
+- **`ServerAliveInterval 60`** → Sends a keep-alive packet every 60 seconds to maintain the connection.
+- **`ServerAliveCountMax 10`** → Allows up to 10 missed keep-alive packets before disconnecting.
 ## Step 4: Add the Key to the SSH Agent
 Activate the SSH agent and add the new key:
 ```bash
