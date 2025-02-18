@@ -36,6 +36,7 @@ If you don’t want to use VS Code as your primary tool for working with Jupyter
 # Useful programs to install
 [[install_programs]]
 # shortcuts, commands & cheat-sheets
+[[SSH Setup with a Jump Host for Direct Remote Access]]
 [[Useful system Shortcuts]]
 [[Useful_terminal_commads]]
 [[VSC_shortcuts]]

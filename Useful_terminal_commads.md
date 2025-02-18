@@ -63,7 +63,6 @@
 | **Shortcut/Command** | **Description**                                   |
 | -------------------- | ------------------------------------------------- |
 | `Tab`                | Advanced autocompletion.                          |
-| `Ctrl+U`             | Clear the line from the cursor to the start.      |
 | `Ctrl+K`             | Clear from the cursor to the end of the line.     |
 | `Ctrl+A`             | Move the cursor to the beginning of the line.     |
 | `Ctrl+E`             | Move the cursor to the end of the line.           |
@@ -103,18 +102,7 @@
 | `Ctrl+a H`                | Start logging the session output to `screenlog.0`.             |                              |
 | `Ctrl+a :multiuser on`    | Enable multiuser mode to share the session.                    |                              |
 | `Ctrl+a :acladd username` | Grant another user access to the session (on the same system). |                              |
-## htop
 
-| **Shortcut/Command**         | **Description**                                              |
-|------------------------------|------------------------------------------------------------|
-| `F5`                         | Show processes in a tree structure.                        |
-| `F6`                         | Sort processes by a specific column (e.g., CPU, MEM).      |
-| `F3`                         | Search for a process by name.                              |
-| `F9`                         | Terminate a selected process.                              |
-| `Space`                      | Mark or unmark a process for bulk actions.                 |
-| `Shift+F5`                   | Expand or collapse the tree structure.                     |
-| `F10`                        | Exit `htop`.                                               |
-| `Shift+H`                    | Show or hide user threads.                                 |
 ## TRIM
 
 | **Shortcut/Command**             | **Description**                                           |
@@ -132,17 +120,7 @@
 | `sudo sensors-detect` | Detect available hardware sensors.                            |
 | `watch -n 2 sensors`  | Continuously monitor hardware temperatures (every 2 seconds). |
 
-## Conda Shortcuts and Commands
-
-### Basic Commands
-
-| **Command**                  | **Description**                                                     |
-|------------------------------|---------------------------------------------------------------------|
-| `conda --version`            | Check the installed version of Conda.                              |
-| `conda info`                 | Display general information about Conda and environment setup.     |
-| `conda update conda`         | Update Conda to the latest version.                                |
-| `conda update --all`         | Update all packages in the current environment.                    |
-### Environment Management
+## Conda Environment Management
 
 | **Command**                          | **Description**                                                    |
 |--------------------------------------|--------------------------------------------------------------------|
@@ -154,28 +132,3 @@
 | `conda deactivate`                   | Deactivate the current environment.                                |
 | `conda env export > env_name.yml`    | Export the environment to a YAML file.                             |
 | `conda env create -f env_name.yml`   | Recreate an environment from a YAML file.                          |
-### Package Management
-
-| **Command**                      | **Description**                                                  |
-|----------------------------------|------------------------------------------------------------------|
-| `conda list`                     | List all installed packages in the current environment.         |
-| `conda search package_name`      | Search for a package in Conda repositories.                     |
-| `conda install package_name`     | Install a package in the current environment.                   |
-| `conda install -n env_name package_name` | Install a package in a specific environment.                   |
-| `conda remove package_name`      | Remove a package from the current environment.                  |
-| `conda clean --all`              | Remove unused packages, cache, and temporary files.             |
-### Channels and Configuration
-
-| **Command**                        | **Description**                                                |
-|------------------------------------|--------------------------------------------------------------|
-| `conda config --show`              | Display the current Conda configuration.                     |
-| `conda config --add channels conda-forge` | Add a new channel (e.g., conda-forge) for package search.    |
-| `conda config --remove channels channel_name` | Remove a specific channel.                                 |
-| `conda config --set channel_priority strict` | Set strict priority for channels.                         |
-### Debugging and Environment Troubleshooting
-
-| **Command**                        | **Description**                                                |
-|------------------------------------|--------------------------------------------------------------|
-| `conda list --revisions`           | Show a list of revisions for the current environment.         |
-| `conda install --revision X`       | Roll back to a specific revision.                             |
-| `conda env config vars`            | View or set environment variables for the current environment.|
