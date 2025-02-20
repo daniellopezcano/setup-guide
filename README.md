@@ -1,7 +1,7 @@
 # Installation Setup & Coding Guides
 
 ## **Objective**
-This repository serves as a comprehensive manual for setting up development environments and configuring tools from scratch. It is designed to guide developers and researchers through key processes such as installing Linux (Debian), configuring advanced terminal tools, setting up Python environments, automating system monitoring, and optimizing workflows with VS Code and Jupyter.
+This repository serves as a comprehensive manual for setting up development environments and configuring tools from scratch. It is designed to guide developers and researchers through key processes such as installing Linux (Debian), configuring advanced terminal tools, setting up Python environments, automating system monitoring, installation of CUDA for ML applications, and optimizing workflows with VS Code and Jupyter.
 
 The guides are written in Markdown and are best viewed using [Obsidian](https://obsidian.md), a tool that allows seamless linking and navigation between files.
 
@@ -35,6 +35,8 @@ If you don’t want to use VS Code as your primary tool for working with Jupyter
 [[Sync Google Drive & Linux with rclone]]
 # Useful programs to install
 [[install_programs]]
+# Installing CUDA, cuDNN, and pytorch
+[[Installing CUDA, cuDNN, and pytorch]]
 # shortcuts, commands & cheat-sheets
 [[SSH Setup with a Jump Host for Direct Remote Access]]
 [[Useful system Shortcuts]]
