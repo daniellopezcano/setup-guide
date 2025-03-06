@@ -46,6 +46,9 @@ If you don’t want to use VS Code as your primary tool for working with Jupyter
 [[markdown cheat-sheet]]
 [[py_cheatsheet.py]]
 
+# Pytorch example
+[[pytorch example]]
+
 ---
 ## **Contact**
 If you encounter any issues, have questions, or would like to suggest improvements, feel free to reach out:  **daniellopezcano13@gmail.com**
